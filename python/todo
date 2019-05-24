@@ -1,0 +1,17 @@
+
+了解内建函数，如map，reduce等
+
+__init__, __getattr__, __setattr__
+
+标准库: sys, os, fileinput, shelve, re
+	& functools, difflib, hashlib, csv, timeit, profile, trace, datatime, itertools, logging, getopt, optparse, cmd
+
+容器: set, heapq, dequeue
+
+########
+
+编码问题: encode, decode以及3.x的变化
+
+python debugger : http://docs.python.org/2/library/pdb.html
+
+special method : http://docs.python.org/2/reference/datamodel.html#specialnames

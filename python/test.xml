@@ -1,0 +1,5 @@
+<xml>
+	<node attr1='1'><sub>1</sub></node>
+	<node attr2='2'><sub>2</sub></node>
+	<node attr3='3'><sub>3</sub></node>
+</xml>

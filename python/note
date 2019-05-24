@@ -1,0 +1,58 @@
+__all__				定义模块的公有接口, 其他方法需要显示导入, 用于过滤
+__file__			模块位置
+[].copy.__doc__     list的copy方法说明
+zip([1,2,3], [4,5]) [(1, 4), (2, 5)]
+chr(n) & ord(c)     n对应字符(0<=n<256) & 单字符的int值
+sys.path			python模块路径
+if __name__ == '__main__'	模块作为程序运行
+built-in: map(str, range(10)); filter(lambda x:x.isalnum(), seq); reduce(lambda x,y:x+y, [1,2,3])
+
+
+translate的转换表是包含ASCII字符集中256个字符的替换字母的字符串
+列表推导式: [x*x for x in range(10) if x % 3 == 0]
+序列解包: x, y = 1, 2 或 x, y = (1, 2)
+assert 1 > 2, 'error message'
+del x, 删除的只是x这个名称, 而不是值
+
+
+
+关键字参数: hello(name='lzz', value='hello')
+收集参数: *param表示元组, **param表示字典
+反转过程: param={name='lzz', value='hello'}; hello(**param)
+python类中同名方法, 后者会覆盖前者, 方法重载通过参数默认值或关键字参数实现
+
+序列相同和相等: 前者用is比较是否同一对象, 后者用==比较值是否相同
+range直接返回一个list, 而xrange相当于返回一个迭代器
+
+Tidy能够以相当智能的方式修复不规范的html
+
+
+###
+x=y=1
+def change(y):
+    global x
+    x+=1
+    print y=y+globals()['y']
+###
+try:
+	pass
+except NameError,TypeError. e:
+	raise
+else:
+	pass
+finally:
+	pass
+
+# python风格的处理迭代问题, "请求原谅比请求允许简单"
+# 异常处理的性能并不比if判断慢多少, 所以在没有性能问题的情况下, 推荐此风格
+def flatten(nested):
+	try:
+		# 不迭代类字符串对象
+		try: nested + ''
+		except TypeError: pass
+		else: raise TypeError
+		for sublist in nested:
+			for element in flatten(sublist):
+				yield element
+	except TypeError:
+		yield nested
